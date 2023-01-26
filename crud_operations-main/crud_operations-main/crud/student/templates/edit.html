@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <form method="POST" action="/update/{{student.id}}">
+        {% csrf_token %}
+        <div>
+            <br>
+            <p>
+                <h3>Update Details</h3>
+            </p>
+        </div>
+        <div>
+            <p>student Id:</p>
+            <div>
+                <input type="text" name="eid" value="{{student.eid}}" />
+            </div>
+        </div>
+        <div>
+            <p>student Name:</p>
+            <div>
+                <input type="text" name="ename" value="{{student.ename}}" />
+            </div>
+        </div>
+        <div>
+            <p>student Email :</p>
+            <div>
+                <input type="email" name="eemail" value="{{student.eemail}}" />
+            </div>
+        </div>
+        <div>
+            <p>student Contact:</p>
+            <div>
+                <input type="text" name="econtact" value="{{student.econtact}}" />
+            </div>
+        </div>
+ <div>
+            <p>student Review:</p>
+            <div>
+                <input type="text" name="rating" value="{{student.review}}" />
+            </div>
+        </div>
+ <div>
+            <p>student Rating:</p>
+            <div>
+                <input type="int" name="rating" value="{{student.rating}}" />
+            </div>
+        </div>
+        <div>
+            <br>
+            <button type="submit">Update</button>
+        </div>
+    </form>
+</body>
+
+</html>
